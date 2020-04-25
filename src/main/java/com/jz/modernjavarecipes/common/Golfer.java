@@ -18,6 +18,15 @@ public class Golfer {
     private String lastName;
     private int score;
     private List<GolfClub> golfClubList = new ArrayList<>();
+    private GolfClub golfClub;
+
+    public Optional<GolfClub> getGolfClub() {
+        return Optional.ofNullable(golfClub);
+    }
+
+    public void setGolfClub(GolfClub golfClub) {
+        this.golfClub = golfClub;
+    }
 
     public Golfer(String firstName) {
         this.firstName = firstName;
