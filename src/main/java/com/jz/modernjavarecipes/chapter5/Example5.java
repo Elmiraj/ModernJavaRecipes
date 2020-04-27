@@ -15,9 +15,20 @@ public class Example5 {
         return values.stream().map(n -> n / factor).collect(Collectors.toList());
     }
 
+    public static List<Integer> div2(List<Integer> values, Integer factor) {
+        try {
+            return values.stream().map(n -> n / factor).collect(Collectors.toList());
+        } catch (ArithmeticException e) {
+            throw new RuntimeException("除以 0 除不尽");
+        }
+    }
+
     public static void main(String[] args) {
-        List<Integer> values = Stream.iterate(1, n -> n + 1).limit(10).collect(Collectors.toList());
+        List<Integer> values = Stream.iterate(1, n -> n + 1)
+                .limit(10)
+                .collect(Collectors.toList());
         int y = 0;
         System.out.println(div(values, y));
+        System.out.println(div2(values, y));
     }
 }

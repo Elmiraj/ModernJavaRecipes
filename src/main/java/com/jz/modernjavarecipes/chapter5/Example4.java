@@ -40,6 +40,5 @@ public class Example4 {
         IntPredicate triangle = Example4::isTriangle;
         IntPredicate both = perfect.and(triangle);
         IntStream.rangeClosed(1, 1_000).filter(both).forEach(System.out::println);
-
     }
 }
