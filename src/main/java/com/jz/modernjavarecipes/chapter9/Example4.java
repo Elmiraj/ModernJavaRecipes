@@ -61,7 +61,6 @@ public class Example4 {
                 return CompletableFuture.completedFuture(golfer);
             } else {
                 logger.info("get remote with id: " + id);
-                // todo 转换为方法引用
 //                return CompletableFuture.supplyAsync(Example4::putCache);
                 return CompletableFuture.supplyAsync(() -> putCache(id));
 //                return IntStream.of(id).mapToObj(Example4::putCache).reduce()
